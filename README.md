@@ -4,7 +4,7 @@
 ## 🚀 About me
 #### Hi 👋, I'm Breno Lopes, brazilian developer and I'm always looking forward to improve my knowledge.
 
-## Log
+##  🪵 Log
 So far I've done the following subjects:
 
 - [x] ALGORITHMS AND DATA STRUCTURES I
@@ -27,7 +27,13 @@ So far I've done the following subjects:
 
 ## 📚 Stack
 During this period I am studying:
-
+- [ ] [STATISTICS AND PROBABILITY]()
+- [ ] [ARTIFICIAL INTELLIGENCE]()
+- [ ] [DEVELOPMENT LABORATORY FOR MOBILE DEVICES]()
+- [ ] [MODELING AND PERFORMANCE ASSESSMENT]()
+- [ ] [OPTATIVE]()
+- [ ] [GRAPH THEORY AND COMPUTABILITY]()
+- [ ] [INTERDISCIPLINARY WORK IV: MOBILE APPLICATIONS]()
 
 ## 👍🏾 Feedback
 
