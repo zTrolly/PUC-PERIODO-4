@@ -18,16 +18,15 @@ So far I've done the following subjects:
 - [X] DATABASES
 - [X] RELIGIOUS CULTURE: RELIGIOUS PHENOMENON
 - [X] INTRODUCTION TO INTELLIGENT SYSTEMS
-
-
-## 📖 Acknowledgements
-
+---
+- [X] ALGORITHMS AND DATA STRUCTURES III
+- [X] COMPUTER ARCHITECTURE II
+- [x] CALCULATION II
+- [X] SOFTWARE ENGINEERING I
+- [X] PROGRAMMING LANGUAGES
 
 ## 📚 Stack
-
-**Front-end:** 
-
-**Back-end:** 
+During this period I am studying:
 
 
 ## 👍🏾 Feedback
