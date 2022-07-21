@@ -44,5 +44,11 @@ If you have any feedback, please let me know via brenolcdev@gmail.com
 </p>
 
 # ❗️ATENÇÃO❗️
-Eu não vou liberar os códigos de trabalho até a data de entrega.
+### Eu não vou liberar os códigos de trabalho até a data de entrega.
+```
+Assim que liberados meus códigos, trabalhos ou qualquer outro tipo de material podem ser utilizados. 
+Não me responsabilizo por evetuais problemas que a cópia dos mesmos podem acarretar, seja pela PUC ou terceiros.
+... Mas se for copiar da pelo menos uma estrelinha no repositório pô 👍🏾
+
+```
 
