@@ -4,7 +4,7 @@
 ## 🚀 About me
 #### Hi 👋, I'm Breno Lopes, brazilian developer and I'm always looking forward to improve my knowledge.
 
-##  🪵 Log
+##  🪓 Log
 So far I've done the following subjects:
 
 - [x] ALGORITHMS AND DATA STRUCTURES I
