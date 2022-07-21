@@ -43,5 +43,6 @@ If you have any feedback, please let me know via brenolcdev@gmail.com
   <img src="https://user-images.githubusercontent.com/61760048/164353961-e9206f96-b909-4424-8640-8fa24eb52679.png" width="250"/>
 </p>
 
-#
+# ❗️ATENÇÃO❗️
+Eu não vou liberar os códigos de trabalho até a data de entrega.
 
