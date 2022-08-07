@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Contador muito legal!!'),
     );
@@ -33,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget okButton = TextButton(
       child: const Text("OK"),
       onPressed: () {
-        Navigator.pop(context);
+        Navigator.pop(context, true);
       },
     );
 
@@ -71,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
+    final wordPair = WordPair.random(); // teste das palavras
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -80,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('Você clicou no botão:', style: TextStyle(fontSize: 20)),
+        
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
@@ -88,15 +90,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'vezes',
             ),
-
+            
             // dois botões para incrementar e decrementar o contador
             ElevatedButton(
-              child: const Text('Incrementar'),
               onPressed: _incrementCounter,
+              child: const Text('Incrementar'),
             ),
             ElevatedButton(
-              child: const Text('Decrementar'),
               onPressed: _decrementCounter,
+              child: const Text('Decrementar'),
             ),
             
           ],
