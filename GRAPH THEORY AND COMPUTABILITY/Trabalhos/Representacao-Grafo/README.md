@@ -1,6 +1,11 @@
 ### Aluno: Breno Lopes
 ### Professor: Zenilton Kleber
-### Disciplina: Grafos
+
+## Inicializacão
+```
+javac Main.java
+java Main arquivo.txt vertice
+```
 
 ## Descrição 
 
