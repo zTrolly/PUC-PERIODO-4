@@ -14,10 +14,8 @@ public class Main{
     System.out.println("Arquivo: " + fileName);
     System.out.println("Vertice: " + vertice);
     
-
     BufferedReader buffRead = new BufferedReader(new FileReader(fileName));
 		String linha = "";
-  
     // pegar a primeira linha do arquivo e separar o numero de vertices e de arestas
     linha = buffRead.readLine();
     int numeroVertices = Integer.parseInt(linha.split(" ")[0]);
@@ -27,7 +25,6 @@ public class Main{
     System.out.println("Numero de vertices: " + numeroVertices);
     System.out.println("Numero de arestas: " + numeroArestas);
 
-		
 		buffRead.close();
 
   
