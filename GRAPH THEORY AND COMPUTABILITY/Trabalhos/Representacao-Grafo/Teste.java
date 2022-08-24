@@ -4,7 +4,6 @@
 import java.util.*;
 
 class Graph<T> {
-
 	// We use Hashmap to store the edges in the graph
 	private Map<T, List<T> > map = new HashMap<>();
 

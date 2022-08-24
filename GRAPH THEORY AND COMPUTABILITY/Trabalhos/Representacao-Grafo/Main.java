@@ -4,7 +4,6 @@ import java.io.IOException;
 
 
 public class Main{
-
   public static void main(String[] args) throws IOException {
 
     String fileName = args[0];
@@ -24,6 +23,10 @@ public class Main{
     //DEBUG_PRINT_NUMBER_OF_VERTICES_AND_EDGES(numeroVertices, numeroArestas)
     System.out.println("Numero de vertices: " + numeroVertices);
     System.out.println("Numero de arestas: " + numeroArestas);
+
+    linha = buffRead.readLine();
+    int verticeOrigem = Integer.parseInt(linha.trim().split(" ")[0]);
+    System.out.println("Vretice Origem: " + verticeOrigem);
 
 		buffRead.close();
 
