@@ -1,10 +1,52 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+class Grafo<T> {
+  private Map<T, List<T> > map = new HashMap<>(); // Hash para armazenar os arestas
+
+  public void adicionaVertice(T s){
+    map.put(s, new LinkedList<T>());
+  }
+
+  /**
+   * Logica para adicinar as relações da aresta
+   * @param origem
+   * @param destino
+   */
+  public void adicionaAresta(T origem, T destino){
+    if (!map.containsKey(origem)) adicionaVertice(origem); 
+    if (!map.containsKey(destino)) adicionaVertice(destino);
+
+    map.get(origem).add(destino);
+  }
+
+  @Override
+	public String toString()
+	{
+		StringBuilder builder = new StringBuilder();
+
+		for (T v : map.keySet()) {
+			builder.append(v.toString() + ": ");
+			for (T w : map.get(v)) {
+				builder.append(w.toString() + " ");
+			}
+			builder.append("\n");
+		}
+
+		return (builder.toString());
+	}
+
+}
 
 
 public class Main{
   public static void main(String[] args) throws IOException {
+		Grafo<Integer> grafo = new Grafo<Integer>();
 
     String fileName = args[0];
     int vertice = Integer.parseInt(args[1]);
@@ -25,11 +67,20 @@ public class Main{
     System.out.println("Numero de arestas: " + numeroArestas);
 
     linha = buffRead.readLine();
-    int verticeOrigem = Integer.parseInt(linha.trim().split(" ")[0]);
-    System.out.println("Vretice Origem: " + verticeOrigem);
-
-		buffRead.close();
-
+    int i = 0;
+    while(true){
+      if (linha != null){
+        String teste = linha.replace("      ", " ").trim().replace("    ", " ").replace("  ", " ").replace("   ", " ").replace("  ", " ");
+        i++;
+        grafo.adicionaAresta(Integer.parseInt(teste.split(" ")[0]),Integer.parseInt(teste.split(" ")[1]));
+      }else
+        break;
+      linha = buffRead.readLine();
+      }
+    
+  
+System.out.println(grafo.toString());
+  
   
   }
 
