@@ -50,6 +50,7 @@ def verificaSucessores(sucessor):
     else:
         return False
 
+#logica aresta / sucessor
 def criaAresta(origem, destino):
   if origem.sucessor == None:
     origem.sucessor = destino
