@@ -5,6 +5,8 @@ import os.path
 listaPredecessores = []
 listaSucessores = []
 
+#variaveis globais
+ultimoVertice = None
 
 #logica dos predecessores
 def inicializaListaPredecessores(qtdPredecessores):
@@ -25,6 +27,29 @@ def adicionaPredecessores(vertice, predecessor):
         return
     else:
         adicionaPredecessores(vertice.predecessor, predecessor)
+
+def verficaVertice(linha):
+    global ultimoVertice
+
+    if ultimoVertice == None:
+      ultimoVertice = linha
+      return 2
+    elif ultimoVertice != linha:
+      ultimoVertice = linha
+      return 1
+    else:
+      ultimoVertice = linha
+      return 0
+    
+
+
+
+
+
+
+
+
+
 
 
 class predecessor:
