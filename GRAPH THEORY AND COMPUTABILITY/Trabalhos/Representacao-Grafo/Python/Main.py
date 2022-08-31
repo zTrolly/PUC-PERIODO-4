@@ -8,6 +8,20 @@ listaSucessores = []
 #variaveis globais
 ultimoVertice = None
 
+#logica vertice
+def verficaVertice(linha):
+    global ultimoVertice
+
+    if ultimoVertice == None:
+      ultimoVertice = linha
+      return 2
+    elif ultimoVertice != linha:
+      ultimoVertice = linha
+      return 1
+    else:
+      ultimoVertice = linha
+      return 0
+
 #logica dos predecessores
 def inicializaListaPredecessores(qtdPredecessores):
     global listaPredecessores
@@ -28,20 +42,20 @@ def adicionaPredecessores(vertice, predecessor):
     else:
         adicionaPredecessores(vertice.predecessor, predecessor)
 
-def verficaVertice(linha):
-    global ultimoVertice
-
-    if ultimoVertice == None:
-      ultimoVertice = linha
-      return 2
-    elif ultimoVertice != linha:
-      ultimoVertice = linha
-      return 1
+#logica dos sucessores
+def verificaSucessores(sucessor):
+    global listaSucessores
+    if sucessor in listaSucessores:
+        return True
     else:
-      ultimoVertice = linha
-      return 0
-    
+        return False
 
+def criaAresta(origem, destino):
+  if origem.sucessor == None:
+    origem.sucessor = destino
+    return
+  else:
+    criaAresta(origem.sucessor, destino)
 
 
 
