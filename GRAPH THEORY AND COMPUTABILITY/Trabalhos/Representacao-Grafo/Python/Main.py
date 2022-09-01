@@ -139,8 +139,36 @@ def criarLista(linha):
        destino.predecessor = origem
        listaPredecessores[(int(linha[1])-1)] = destino
 
+def printGeral(vertice):
+  global grauDeSaida
+  global grauDeEntrada
 
-    
+  aux = listaPredecessores[int(vertice)-1]
+  predecessores = []
+
+  if verficaPredecessores(int(vertice)):
+    pesquisaPredecessor(aux, predecessores)
+    print("Predecessores -> ")
+    for i in predecessores:
+      print("-" + i + "-")
+      print("")
+  else:
+    print("ERROR")
+  grauDeSaida = len(predecessores) 
+   #SUCESSORES
+  aux = listaSucessores[int(vertice)-1]
+  sucessores = []
+
+  if verificaSucessores(int(vertice)):
+    pesquisaSucessores(aux, sucessores)
+    print("Sucessores -> ")
+    for i in sucessores:
+      print("-" + i + "-")
+      print("")
+  else:
+    print("ERROR")
+  grauDeEntrada = len(sucessores)
+
 
 
 
