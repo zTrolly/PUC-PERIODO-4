@@ -52,6 +52,14 @@ def verificaSucessores(sucessor):
     else:
         return False
 
+def pesquisaSucessores(origem, sucessores):
+  if origem.vertice != None:
+    if origem.sucessor != None:
+      sucessores.append(origem.sucessor.vertice)
+      pesquisaSucessores(origem.sucessor, sucessores)
+  else:
+    return
+
 #logica aresta / sucessor
 def criaAresta(origem, destino):
   if origem.sucessor == None:
@@ -124,6 +132,7 @@ def criarLista(linha):
        listaPredecessores[(int(linha[1])-1)] = destino
 
 
+    
 
 
 
