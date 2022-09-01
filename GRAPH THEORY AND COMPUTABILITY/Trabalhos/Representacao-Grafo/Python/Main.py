@@ -5,7 +5,7 @@ import os.path
 listaPredecessores = []
 listaSucessores = []
 
-#variaveis globais
+#utility
 ultimoVertice = None
 grauDeSaida = 0
 grauDeEntrada = 0
