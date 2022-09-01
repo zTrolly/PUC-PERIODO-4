@@ -1,5 +1,6 @@
 import sys
 import os.path
+from tkinter import NONE
 
 # global lists
 listaPredecessores = []
@@ -27,7 +28,7 @@ def verficaVertice(linha):
 #logica dos predecessores
 def inicializaListaPredecessores(qtdPredecessores):
     global listaPredecessores
-    listaPredecessores = [] * (qtdPredecessores -1)
+    listaPredecessores = [None] * (qtdPredecessores -1)
     return listaPredecessores
 
 def verficaPredecessores(predecessor):
@@ -77,17 +78,15 @@ def criaAresta(origem, destino):
     criaAresta(origem.sucessor, destino)
 
 class predecessor:
-    def __init__(self, predecessor, vertice):
-        self.predecessor = predecessor
-        self.vertice = vertice
+        predecessor = None
+        vertice = None
 
 class sucessor:
-    def __init__(self, sucessor, vertice):
-        self.sucessor = sucessor
-        self.predecessor = vertice
+        sucessor = None
+        vertice = None
 
 def criar(linha):
-  if verficaVertice(linha[0]) == 2 & linha != None:
+  if verficaVertice(linha[0]) == 2:
     origemSucessor = sucessor()
     destino = sucessor()
 
@@ -97,17 +96,17 @@ def criar(linha):
     destino.sucessor = None
     origemSucessor.sucessor = destino
 
-    sucessor.append(origemSucessor)    
+    listaSucessores.append(origemSucessor)    
 
    
-    destinoPredecessor = predecessor()
+    a = predecessor()
     origemPredecessor = predecessor()
 
-    destinoPredecessor.vertice = linha[1]
+    a.vertice = linha[1]
     origemPredecessor.vertice = linha[0]
-
-    destinoPredecessor.predecessor = origemPredecessor
-    predecessor.insert(int(linha[1])-1, origemPredecessor)   
+    
+    a.predecessor = origemPredecessor
+    listaPredecessores.insert(int(linha[1])-1, origemPredecessor)   
 
   elif verficaVertice(linha[0]) == 0 & linha != None:
     destino = sucessor()
@@ -170,8 +169,8 @@ def printGeral(vertice):
     print("ERROR")
   grauDeSaida = len(sucessores)
 
-path = sys.argv[1]
-vertice = sys.argv[2]
+path = "teste.txt"
+vertice = "4"
 
 with open(path) as file:
   linha = file.readlines()
