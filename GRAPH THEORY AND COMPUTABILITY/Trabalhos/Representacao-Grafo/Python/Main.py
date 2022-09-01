@@ -184,4 +184,10 @@ for i in range(0, len(linha)-1):
     inicializaListaPredecessores(int(splits[1]))
     travaLoop = True
   else:
-    criarLista(splits)
+    criar(splits)
+
+
+printGeral(vertice)
+print("--X--")
+print("Grau de Entrada: " + str(grauDeEntrada))
+print("Grau de Saida: " + str(grauDeSaida))
