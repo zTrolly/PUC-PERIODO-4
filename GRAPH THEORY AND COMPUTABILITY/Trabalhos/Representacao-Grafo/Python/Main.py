@@ -154,8 +154,9 @@ def printGeral(vertice):
       print("")
   else:
     print("ERROR")
-  grauDeSaida = len(predecessores) 
-   #SUCESSORES
+  grauDeEntrada = len(predecessores) 
+   
+  #SUCESSORES
   aux = listaSucessores[int(vertice)-1]
   sucessores = []
 
@@ -167,7 +168,7 @@ def printGeral(vertice):
       print("")
   else:
     print("ERROR")
-  grauDeEntrada = len(sucessores)
+  grauDeSaida = len(sucessores)
 
 
 
