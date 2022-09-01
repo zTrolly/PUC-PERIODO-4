@@ -44,6 +44,14 @@ def adicionaPredecessores(vertice, predecessor):
     else:
         adicionaPredecessores(vertice.predecessor, predecessor)
 
+def pesquisaPredecessor(destino, predecessores):
+  if destino.vertice != None:
+    if destino.predecessor != None:
+      predecessores.append(destino.predecessor.vertice)
+      pesquisaPredecessor(destino.predecessor, predecessores)
+  else:
+    return
+
 #logica dos sucessores
 def verificaSucessores(sucessor):
     global listaSucessores
