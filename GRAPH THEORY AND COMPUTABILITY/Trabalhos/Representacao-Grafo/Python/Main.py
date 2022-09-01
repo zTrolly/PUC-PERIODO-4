@@ -7,6 +7,8 @@ listaSucessores = []
 
 #variaveis globais
 ultimoVertice = None
+grauDeSaida = 0
+grauDeEntrada = 0
 
 #logica vertice
 def verficaVertice(linha):
@@ -58,15 +60,6 @@ def criaAresta(origem, destino):
   else:
     criaAresta(origem.sucessor, destino)
 
-
-
-
-
-
-
-
-
-
 class predecessor:
     def __init__(self, predecessor, vertice):
         self.predecessor = predecessor
@@ -76,5 +69,49 @@ class sucessor:
     def __init__(self, sucessor, vertice):
         self.sucessor = sucessor
         self.predecessor = vertice
+
+def criarLista(linha):
+  if verficaVertice(linha[0]) == 2 & linha != None:
+    origemSucessor = sucessor()
+    destino = sucessor()
+
+    origemSucessor.vertice = linha[0]
+    destino.vertice = linha[1]
+
+    destino.sucessor = None
+    origemSucessor.sucessor = destino
+
+    sucessor.append(origemSucessor)    
+
+   
+    destinoPredecessor = predecessor()
+    origemPredecessor = predecessor()
+
+    destinoPredecessor.vertice = linha[1]
+    origemPredecessor.vertice = linha[0]
+
+    destinoPredecessor.predecessor = origemPredecessor
+    predecessor.insert(int(linha[1])-1, origemPredecessor)   
+
+  elif verficaVertice(linha[0]) == 0 & linha != None:
+    destino = sucessor()
+    destino.vertice = linha[1]
+
+    origem = listaSucessores[len(listaSucessores)-1]
+    criaAresta(origem, destino)
+    
+  else:
+    origem = sucessor()
+    destino = sucessor()
+
+    origem.vertice = linha[0]
+    destino.vertice = linha[1]
+
+    origem.sucessor = destino
+    listaSucessores.append(origem)
+
+
+
+
 
 
