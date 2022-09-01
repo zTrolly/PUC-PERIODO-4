@@ -86,7 +86,7 @@ class sucessor:
         self.sucessor = sucessor
         self.predecessor = vertice
 
-def criarLista(linha):
+def criar(linha):
   if verficaVertice(linha[0]) == 2 & linha != None:
     origemSucessor = sucessor()
     destino = sucessor()
@@ -170,7 +170,18 @@ def printGeral(vertice):
     print("ERROR")
   grauDeSaida = len(sucessores)
 
+path = sys.argv[1]
+vertice = sys.argv[2]
 
+with open(path) as file:
+  linha = file.readlines()
 
-
-
+travaLoop = False
+for i in range(0, len(linha)-1):
+  removeSpace = linha[i].strip()
+  splits = removeSpace.split()
+  if travaLoop == False:
+    inicializaListaPredecessores(int(splits[1]))
+    travaLoop = True
+  else:
+    criarLista(splits)
