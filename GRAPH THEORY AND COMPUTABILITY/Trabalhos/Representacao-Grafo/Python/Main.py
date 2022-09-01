@@ -99,7 +99,7 @@ def criarLista(linha):
 
     origem = listaSucessores[len(listaSucessores)-1]
     criaAresta(origem, destino)
-    
+
   else:
     origem = sucessor()
     destino = sucessor()
@@ -109,6 +109,19 @@ def criarLista(linha):
 
     origem.sucessor = destino
     listaSucessores.append(origem)
+  
+  if verficaVertice(linha[0]) != 	2 & linha != None:
+      if verficaPredecessores(int(linha[1])):
+       predecessor = predecessor()
+       predecessor.vertice = linha[0]
+       adicionaPredecessores(listaPredecessores[(int(linha[1])-1)], predecessor)
+      else:
+       destino = predecessor()
+       origem = predecessor()
+       origem.vertice = linha[0]
+       destino.vertice = linha[1]
+       destino.predecessor = origem
+       listaPredecessores[(int(linha[1])-1)] = destino
 
 
 
