@@ -8,12 +8,14 @@ void main() => runApp(new MaterialApp(
     ));
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage> {
   int numPessoas = 0;
   double precoConta = 0.0;
   double precoPorPessoa = 0.0;
@@ -21,23 +23,7 @@ class _MyHomePageState extends State<MyHomePage>
   double porcentagem = 0.0;
   double total = 0.0;
 
-  late Animation animation;
-  late AnimationController animationController;
 
-  @override
-  void initState() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1000),
-    );
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,16 +90,6 @@ class _MyHomePageState extends State<MyHomePage>
                 onPressed: () {
                   setState(() {
                     precoPorPessoa = precoConta / numPessoas;
-                    animation = Tween<double>(
-                      begin: animation.value,
-                      end: precoPorPessoa,
-                    ).animate(CurvedAnimation(
-                        curve: Curves.fastOutSlowIn,
-                        parent: animationController));
-                    animation.addListener(() {
-                      setState(() {});
-                    });
-                    animationController.forward();
                     parteGarcom = (porcentagem) / 100 * precoConta;
                     total = precoPorPessoa + (parteGarcom / numPessoas);
                   });
@@ -121,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage>
                 child: const Text("Divide a conta Ai!")),
             const Padding(padding: EdgeInsets.all(10.0)),
             Text(
-              "O valor total que cada um tem que pagar é de: R\$ ${animation.value.toStringAsFixed(2)}",
+              "O valor total que cada um tem que pagar é de: R\$ ${precoPorPessoa.toStringAsFixed(2)}",
               style:
                   const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
