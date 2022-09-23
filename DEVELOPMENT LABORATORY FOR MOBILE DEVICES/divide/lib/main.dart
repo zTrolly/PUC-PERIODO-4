@@ -23,8 +23,6 @@ class _MyHomePageState extends State<MyHomePage> {
   double porcentagem = 0.0;
   double total = 0.0;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     keyboardType: TextInputType.number,
                     onChanged: (text) {
                       setState(() {
+                        precoConta = 0;
                         precoConta = double.parse(text);
                       });
                     },
@@ -63,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     keyboardType: TextInputType.number,
                     onChanged: (text) {
                       setState(() {
+                        numPessoas = 0;
                         numPessoas = int.parse(text);
                       });
                     },
@@ -78,7 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     keyboardType: TextInputType.number,
                     onChanged: (text) {
                       setState(() {
-                        porcentagem = (double.parse(text)) / 100 * precoConta;
+                        parteGarcom = 0;
+                        parteGarcom = double.parse(text);
                       });
                     },
                   ),
@@ -90,8 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   setState(() {
                     precoPorPessoa = precoConta / numPessoas;
-                    parteGarcom = (porcentagem) / 100 * precoConta;
-                    total = precoPorPessoa + (parteGarcom / numPessoas);
+                    porcentagem = precoConta * (parteGarcom / 100);
+                    total = precoPorPessoa + (porcentagem / numPessoas);
                   });
                 },
                 child: const Text("Divide a conta Ai!")),
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             Text(
-              "A parte do garçom é de: R\$ ${parteGarcom.toStringAsFixed(2)}",
+              "A parte do garçom é de: R\$ ${porcentagem.toStringAsFixed(2)}",
               style:
                   const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
