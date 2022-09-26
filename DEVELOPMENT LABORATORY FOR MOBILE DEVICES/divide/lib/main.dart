@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: unnecessary_new
 void main() => runApp(new MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.pink),
+      theme: ThemeData(primarySwatch: Colors.amber),
       home: const MyHomePage(),
     ));
 
@@ -88,6 +88,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const Padding(padding: EdgeInsets.all(10.0)),
             OutlinedButton(
+                style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.amber, backgroundColor: Colors.black, // Text Color (Foreground color)
+                ),
                 onPressed: () {
                   setState(() {
                     precoPorPessoa = precoConta / numPessoas;
@@ -108,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Cada um vai ter que pagar: R\$ ${total.toStringAsFixed(2)}",
+              "Cada um vai ter que pagar ao todo: R\$ ${total.toStringAsFixed(2)}",
               style:
                   const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
